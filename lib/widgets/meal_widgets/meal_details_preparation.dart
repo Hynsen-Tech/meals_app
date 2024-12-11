@@ -38,15 +38,15 @@ class MealDetailsPreparation extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(top: 5.0),
                               child: Container(
-                                height: 30,
-                                width: 30,
+                                height: 20,
+                                width: 20,
                                 decoration: const BoxDecoration(
                                     shape: BoxShape.circle, color: Colors.green),
                                 child: Center(
                                   child: Text(
                                     '$index',
                                     style: const TextStyle(
-                                        color: Colors.white, fontSize: 18),
+                                        color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold,),
                                   ),
                                 ),
                               ),

@@ -22,7 +22,7 @@ class MealDetailsIngredients extends StatelessWidget {
                   Text(
                     'INGREDIENTS',
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: Colors.green[700],
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.bold),
                     textAlign: TextAlign.start,
                   ),

@@ -5,7 +5,7 @@
 ## About
 Multi-platform recipe application built with **Flutter**. You can view the various recipes among the categories present, filter and add them to your favorites.
 
-<img src="recipes-details-and-favorites-setting.png" width="300"/> <img src="recipes-filters.png" width="300"/> <img src="list-recipes.png" width="300"/>
+<img src="recipes-details-and-favorites-setting.png" width="200"/> <img src="recipes-filters.png" width="200"/> <img src="list-recipes.png" width="200"/>
 
 
 ## Note

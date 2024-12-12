@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/models/favorites.dart';
 import 'package:meals_app/screens/categories_screen.dart';
 import 'package:meals_app/screens/meals_screen.dart';
 import 'package:meals_app/widgets/main_drawer.dart';
@@ -19,8 +20,6 @@ class _TabsScreenState extends State<TabsScreen> {
     });
   }
 
-  void _setScreen(String identifier) {}
-
   @override
   Widget build(BuildContext context) {
     Widget screenSelected = const CategoriesScreen();
@@ -28,16 +27,15 @@ class _TabsScreenState extends State<TabsScreen> {
 
     if (_pageSelected == 1) {
       appBarTitle = 'Favorites';
-      screenSelected = const MealsScreen(meals: []);
+      screenSelected = MealsScreen(meals: Favorites().favoritesList);
     }
 
     return Scaffold(
       appBar: AppBar(
         title: Text(appBarTitle),
       ),
-      drawer: Drawer(
+      drawer: const Drawer(
         child: MainDrawer(
-          onSelectScreen: _setScreen,
         ),
       ),
       body: screenSelected,

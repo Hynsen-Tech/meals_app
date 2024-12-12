@@ -26,6 +26,18 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           textTheme: GoogleFonts.latoTextTheme(),
         ),
+        darkTheme: ThemeData.dark().copyWith(
+          textTheme: GoogleFonts.latoTextTheme().copyWith(),
+          brightness: Brightness.dark,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.green.shade900,
+          ),
+          scaffoldBackgroundColor: Colors.grey[900],
+          appBarTheme: AppBarTheme(
+            color: Colors.green.shade900,
+            foregroundColor: Colors.white,
+          ),
+        ),
         home: const TabsScreen());
   }
 }

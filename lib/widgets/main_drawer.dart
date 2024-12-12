@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/screens/filters_screen.dart';
 
 class MainDrawer extends StatelessWidget {
-  const MainDrawer({super.key, required this.onSelectScreen});
-
-  final void Function(String identifier) onSelectScreen;
+  const MainDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = MediaQuery.of(context).platformBrightness;
+    bool isDark = brightness == Brightness.dark;
+
     return Drawer(
+      backgroundColor: isDark
+          ? Theme.of(context).primaryColor
+          : Theme.of(context).scaffoldBackgroundColor,
       child: Column(
         children: [
           DrawerHeader(
@@ -16,7 +21,9 @@ class MainDrawer extends StatelessWidget {
                 Icon(
                   Icons.fastfood_outlined,
                   size: 100,
-                  color: Theme.of(context).primaryColor,
+                  color: isDark
+                      ? Colors.green[700]
+                      : Theme.of(context).primaryColor,
                 ),
                 const SizedBox(
                   width: 20,
@@ -27,7 +34,9 @@ class MainDrawer extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).primaryColor,
+                      color: isDark
+                          ? Colors.green[700]
+                          : Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -38,26 +47,40 @@ class MainDrawer extends StatelessWidget {
             onTap: () {
               Navigator.pop(context);
             },
-            leading: const Icon(
+            leading: Icon(
               Icons.restaurant,
               size: 30,
+              color:
+                  isDark ? Colors.green[700] : Theme.of(context).primaryColor,
             ),
-            title: const Text(
+            title: Text(
               'Meals',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(
+                fontSize: 24,
+                color:
+                    isDark ? Colors.green[700] : Theme.of(context).primaryColor,
+              ),
             ),
           ),
           ListTile(
             onTap: () {
-              onSelectScreen('filters');
+              Navigator.pop(context);
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (ctx) => const FiltersScreen()));
             },
-            leading: const Icon(
+            leading: Icon(
               Icons.settings,
               size: 30,
+              color:
+                  isDark ? Colors.green[700] : Theme.of(context).primaryColor,
             ),
-            title: const Text(
+            title: Text(
               'Filters',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(
+                fontSize: 24,
+                color:
+                    isDark ? Colors.green[700] : Theme.of(context).primaryColor,
+              ),
             ),
           )
         ],

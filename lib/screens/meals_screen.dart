@@ -35,6 +35,9 @@ class _MealsScreenState extends State<MealsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Brightness brightness = MediaQuery.of(context).platformBrightness;
+    bool isDark = brightness == Brightness.dark;
+
     final Widget listViewElem;
 
 
@@ -48,7 +51,9 @@ class _MealsScreenState extends State<MealsScreen> {
       listViewElem = Center(
           child: Text(
         'No recipes found!',
-        style: Theme.of(context).textTheme.titleLarge,
+        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+          color: isDark ? Colors.white : Colors.grey.shade900
+        ),
       ));
     }
 

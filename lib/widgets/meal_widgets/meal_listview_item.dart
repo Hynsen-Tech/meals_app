@@ -35,12 +35,15 @@ class MealListviewItem extends StatelessWidget {
                 ),
               ),
             ),
-            FadeInImage.memoryNetwork(
-              fadeInDuration: const Duration(milliseconds: 300),
-              height: 250,
-              placeholder: kTransparentImage,
-              image: meal.imageUrl,
-              fit: BoxFit.cover,
+            Hero(
+              tag: meal.id,
+              child: FadeInImage.memoryNetwork(
+                fadeInDuration: const Duration(milliseconds: 300),
+                height: 250,
+                placeholder: kTransparentImage,
+                image: meal.imageUrl,
+                fit: BoxFit.cover,
+              ),
             ),
             Positioned(
                 bottom: 0,

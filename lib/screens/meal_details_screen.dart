@@ -41,12 +41,15 @@ class _MealDetailsScreenState extends State<MealDetailsScreen> {
       ),
       body: ListView(
         children: [
-          FadeInImage.memoryNetwork(
-            placeholder: kTransparentImage,
-            image: widget.meal.imageUrl,
-            height: 250,
-            width: double.infinity,
-            fit: BoxFit.cover,
+          Hero(
+            tag: widget.meal.id,
+            child: FadeInImage.memoryNetwork(
+              placeholder: kTransparentImage,
+              image: widget.meal.imageUrl,
+              height: 250,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
           ),
           MealDetailsMoreInfo(widget.meal),
           MealDetailsIngredients(widget.meal.ingredients),

@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Meals App',
         theme: ThemeData(
+          cardTheme: CardTheme(
+            color: Colors.grey.shade100,
+          ),
           colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.green.shade700,
           ),
@@ -27,6 +30,9 @@ class MyApp extends StatelessWidget {
           textTheme: GoogleFonts.latoTextTheme(),
         ),
         darkTheme: ThemeData.dark().copyWith(
+          cardTheme: CardTheme(
+            color: Colors.grey.shade900,
+          ),
           textTheme: GoogleFonts.latoTextTheme().copyWith(),
           brightness: Brightness.dark,
           colorScheme: ColorScheme.fromSeed(
